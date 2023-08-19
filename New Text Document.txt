@@ -1,22 +1,23 @@
-// leaders in the array
-// {7,10,4,3,6,5,2}  o/p-10 6 5 2
-public class ArrayG12 {
-    public static void arrayLeader(int arr[],int n){
-         n=arr.length;
-        int currleader=arr[n-1];
-        System.out.println(currleader);
-        for(int i=n-2;i>=0;i--){
-            if(currleader<arr[i]){
-                currleader=arr[i];
-                System.out.print(currleader+" ");
+// Buy and stock
+public class ArrayG15 {
+    public static int maxProfit(int price[],int n){
+        int profit=0;
+
+        for(int i=1;i<n;i++){
+            if(price[i]>price[i-1]){
+                profit=profit + price[i]-price[i-1];
             }
         }
-    }
-    public static void main(String args[]){
-        int arr[]={7,10,4,3,6,5,2};
-        int n=arr.length;
-        arrayLeader(arr,n);
+        return profit;
 
     }
+    public static void main(String args[]){
+        int price[]={1,5,3,8,12};
+        int n=price.length;
+        int maxProfit=maxProfit(price,n);
+        System.out.println(maxProfit);
+    }
+
 }
+
 
